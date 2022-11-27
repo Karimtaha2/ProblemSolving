@@ -81,7 +81,8 @@ SinglyLinkedListNode* deleteNode(SinglyLinkedListNode* head, int position) {
     SinglyLinkedListNode *prev = NULL; // need to previous delPtr
     if (head == NULL) { return nullptr; } // if list is empty
     // if position is the first node in list
-    else if (head->data == position) {
+    //else if (head->data == position) {
+    else if (position == 0) {
         head = head->next;
         delete delPtr;
     }
@@ -95,7 +96,6 @@ SinglyLinkedListNode* deleteNode(SinglyLinkedListNode* head, int position) {
             delPtr = delPtr->next;
         }
         prev->next = delPtr->next;
-        delPtr->next = nullptr;
         delete delPtr;
     }
     
